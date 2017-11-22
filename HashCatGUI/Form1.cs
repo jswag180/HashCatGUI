@@ -95,6 +95,12 @@ namespace HashCatGUI
 
             string filename = Path.Combine(appPath, "hashcat64.exe");
 
+            MethodInvoker inv = delegate
+            {
+                lblCon.Text = lblCon.Text + "\n" +conOut;
+
+            };
+
             bw = new BackgroundWorker();
             bw.DoWork += new DoWorkEventHandler(
          async delegate (object o, DoWorkEventArgs argss)
@@ -120,9 +126,10 @@ namespace HashCatGUI
 
                  while (!p.HasExited)
                  {
-                     String cun = await consuleOut.ReadLineAsync();
-                     ConLines.Add(cun);
-                     Console.WriteLine(cun);
+                     conOut = await consuleOut.ReadLineAsync();
+                     ConLines.Add(conOut);
+                     Console.WriteLine(conOut);
+                     Invoke(inv);
                      //lbl.Text = lbl.Text +  "/n" + cun;//TODO hmmmm
                  }
 
@@ -177,6 +184,7 @@ namespace HashCatGUI
 
          });
             bw.RunWorkerAsync();
+
 
         }
 

@@ -41,8 +41,10 @@
             this.btnClearHistory = new System.Windows.Forms.Button();
             this.manualTxt = new System.Windows.Forms.TextBox();
             this.lblCon = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.hashTypeGB.SuspendLayout();
             this.attackModeGB.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // hashTypeGB
@@ -158,18 +160,27 @@
             // 
             // lblCon
             // 
-            this.lblCon.Location = new System.Drawing.Point(309, 296);
+            this.lblCon.AutoSize = true;
+            this.lblCon.Location = new System.Drawing.Point(3, 0);
             this.lblCon.Name = "lblCon";
-            this.lblCon.Size = new System.Drawing.Size(279, 98);
+            this.lblCon.Size = new System.Drawing.Size(0, 13);
             this.lblCon.TabIndex = 7;
-            this.lblCon.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.lblCon);
+            this.panel1.Location = new System.Drawing.Point(222, 314);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(413, 200);
+            this.panel1.TabIndex = 8;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 555);
-            this.Controls.Add(this.lblCon);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.manualTxt);
             this.Controls.Add(this.btnClearHistory);
             this.Controls.Add(this.btnCrack);
@@ -184,6 +195,8 @@
             this.hashTypeGB.PerformLayout();
             this.attackModeGB.ResumeLayout(false);
             this.attackModeGB.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,6 +216,7 @@
         private System.Windows.Forms.RadioButton manualRad;
         private System.Windows.Forms.TextBox manualTxt;
         private System.Windows.Forms.Label lblCon;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
