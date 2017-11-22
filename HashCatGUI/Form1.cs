@@ -20,6 +20,12 @@ namespace HashCatGUI
         BackgroundWorker bw = null;
         static String args = "";
         static List<String> ConLines = new List<String>();
+        MethodInvoker status;
+        MethodInvoker pause;
+        MethodInvoker resume;
+        MethodInvoker bypass;
+        MethodInvoker checkpoint;
+        MethodInvoker exit;
 
         public Form1()
         {
@@ -122,7 +128,45 @@ namespace HashCatGUI
                  p.Start();
                  //get the consoule output
                  StreamReader consuleOut = p.StandardOutput;
+                 StreamWriter consuleIn = p.StandardInput;
                  //conOut = await consuleOut.ReadToEndAsync();
+
+                 status = delegate
+                 {
+                     consuleIn.Write("s");
+
+                 };
+
+                 pause = delegate
+                 {
+                     consuleIn.Write("p");
+
+                 };
+
+                 resume = delegate
+                 {
+                     consuleIn.Write("r");
+
+                 };
+
+                 bypass = delegate
+                 {
+                     consuleIn.Write("b");
+
+                 };
+
+                 checkpoint = delegate
+                 {
+                     consuleIn.Write("c");
+
+                 };
+
+                 exit = delegate
+                 {
+                     //consuleIn.WriteLine("q" + "\r");
+                         p.StandardInput.WriteLine("q");
+                         p.StandardInput.Flush();
+                 };
 
                  while (!p.HasExited)
                  {
@@ -130,7 +174,7 @@ namespace HashCatGUI
                      ConLines.Add(conOut);
                      Console.WriteLine(conOut);
                      Invoke(inv);
-                     //lbl.Text = lbl.Text +  "/n" + cun;//TODO hmmmm
+                     
                  }
 
                  //wait
@@ -231,6 +275,36 @@ namespace HashCatGUI
                 manualTxt.Visible = false;
             }
             
+        }
+
+        private void btnStatus_Click(object sender, EventArgs e)
+        {
+            Invoke(status);
+        }
+
+        private void btnPause_Click(object sender, EventArgs e)
+        {
+            Invoke(pause);
+        }
+
+        private void btnResume_Click(object sender, EventArgs e)
+        {
+            Invoke(resume);
+        }
+
+        private void btnBypass_Click(object sender, EventArgs e)
+        {
+            Invoke(bypass);
+        }
+
+        private void btnCheckpoint_Click(object sender, EventArgs e)
+        {
+            Invoke(checkpoint);
+        }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            Invoke(exit);
         }
     }
       

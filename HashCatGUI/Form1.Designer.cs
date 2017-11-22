@@ -42,6 +42,12 @@
             this.manualTxt = new System.Windows.Forms.TextBox();
             this.lblCon = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnStatus = new System.Windows.Forms.Button();
+            this.btnPause = new System.Windows.Forms.Button();
+            this.btnResume = new System.Windows.Forms.Button();
+            this.btnBypass = new System.Windows.Forms.Button();
+            this.btnCheckpoint = new System.Windows.Forms.Button();
+            this.btnQuit = new System.Windows.Forms.Button();
             this.hashTypeGB.SuspendLayout();
             this.attackModeGB.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -175,11 +181,77 @@
             this.panel1.Size = new System.Drawing.Size(413, 200);
             this.panel1.TabIndex = 8;
             // 
+            // btnStatus
+            // 
+            this.btnStatus.Location = new System.Drawing.Point(141, 314);
+            this.btnStatus.Name = "btnStatus";
+            this.btnStatus.Size = new System.Drawing.Size(75, 23);
+            this.btnStatus.TabIndex = 9;
+            this.btnStatus.Text = "Satus";
+            this.btnStatus.UseVisualStyleBackColor = true;
+            this.btnStatus.Click += new System.EventHandler(this.btnStatus_Click);
+            // 
+            // btnPause
+            // 
+            this.btnPause.Location = new System.Drawing.Point(141, 344);
+            this.btnPause.Name = "btnPause";
+            this.btnPause.Size = new System.Drawing.Size(75, 23);
+            this.btnPause.TabIndex = 10;
+            this.btnPause.Text = "Pause";
+            this.btnPause.UseVisualStyleBackColor = true;
+            this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
+            // 
+            // btnResume
+            // 
+            this.btnResume.Location = new System.Drawing.Point(141, 374);
+            this.btnResume.Name = "btnResume";
+            this.btnResume.Size = new System.Drawing.Size(75, 23);
+            this.btnResume.TabIndex = 11;
+            this.btnResume.Text = "Resume";
+            this.btnResume.UseVisualStyleBackColor = true;
+            this.btnResume.Click += new System.EventHandler(this.btnResume_Click);
+            // 
+            // btnBypass
+            // 
+            this.btnBypass.Location = new System.Drawing.Point(141, 404);
+            this.btnBypass.Name = "btnBypass";
+            this.btnBypass.Size = new System.Drawing.Size(75, 23);
+            this.btnBypass.TabIndex = 12;
+            this.btnBypass.Text = "Bypass";
+            this.btnBypass.UseVisualStyleBackColor = true;
+            this.btnBypass.Click += new System.EventHandler(this.btnBypass_Click);
+            // 
+            // btnCheckpoint
+            // 
+            this.btnCheckpoint.Location = new System.Drawing.Point(141, 434);
+            this.btnCheckpoint.Name = "btnCheckpoint";
+            this.btnCheckpoint.Size = new System.Drawing.Size(75, 23);
+            this.btnCheckpoint.TabIndex = 13;
+            this.btnCheckpoint.Text = "Checkpoint";
+            this.btnCheckpoint.UseVisualStyleBackColor = true;
+            this.btnCheckpoint.Click += new System.EventHandler(this.btnCheckpoint_Click);
+            // 
+            // btnQuit
+            // 
+            this.btnQuit.Location = new System.Drawing.Point(141, 464);
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(75, 23);
+            this.btnQuit.TabIndex = 14;
+            this.btnQuit.Text = "Quit";
+            this.btnQuit.UseVisualStyleBackColor = true;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 555);
+            this.Controls.Add(this.btnQuit);
+            this.Controls.Add(this.btnCheckpoint);
+            this.Controls.Add(this.btnBypass);
+            this.Controls.Add(this.btnResume);
+            this.Controls.Add(this.btnPause);
+            this.Controls.Add(this.btnStatus);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.manualTxt);
             this.Controls.Add(this.btnClearHistory);
@@ -217,6 +289,12 @@
         private System.Windows.Forms.TextBox manualTxt;
         private System.Windows.Forms.Label lblCon;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnStatus;
+        private System.Windows.Forms.Button btnPause;
+        private System.Windows.Forms.Button btnResume;
+        private System.Windows.Forms.Button btnBypass;
+        private System.Windows.Forms.Button btnCheckpoint;
+        private System.Windows.Forms.Button btnQuit;
     }
 }
 
